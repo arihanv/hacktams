@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 //import pages.dart
 import 'page.dart';
 
@@ -26,25 +27,37 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            border: Border.all(
+              color: Colors.blueAccent,
             ),
-            Text(
-              '$_counter',
-              style: TextStyle(fontFamily: "SF", fontSize: 40),
-            ),
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const Test()),
-                  );
-                },
-                child: const Text("Click me"))
-          ],
+            color: Colors.black26,
+          ),
+          height: 500,
+          width: 350,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Lottie.asset('/Users/arihanvaranasi/Dev/Apps/hacktams/assets/41561-machine-learning.json'),
+              const Text(
+                'You have pushed the button this many times:',
+              ),
+              Text(
+                '$_counter',
+                style: const TextStyle(fontFamily: "SF", fontSize: 40),
+              ),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const Test()),
+                    );
+                  },
+                  child: const Text("Click me"))
+            ],
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
