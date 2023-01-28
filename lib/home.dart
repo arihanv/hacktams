@@ -1,5 +1,6 @@
-
 import 'package:flutter/material.dart';
+//import pages.dart
+import 'page.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -20,7 +21,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
- 
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -34,8 +34,16 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+              style: TextStyle(fontFamily: "SF", fontSize: 40),
             ),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Test()),
+                  );
+                },
+                child: const Text("Click me"))
           ],
         ),
       ),
